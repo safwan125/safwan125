@@ -1,4 +1,4 @@
-![Header](https://media.licdn.com/dms/image/v2/D4D16AQHW0VqrRM-YMg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1701014324404?e=1740614400&v=beta&t=Qxf92YHaGqj4Xks9Y3KOScSQ23P6n0L3EwBxYPuf5Bc)
+![Header](https://your-image-url.com/banner.png)
 
 # 👋 Hey there, I'm **Safwan**!  
 
@@ -8,7 +8,7 @@
 ---
 
 ## 🌟 About Me  
-- 🔹 I’m currently diving deep into building web applications with **modern frameworks** like **React** and **Node.js**.  
+- 🔹 I’m currently diving deep into building web applications with **modern frameworks** like **React**, **Next.js**, and **Node.js**.  
 - 🔹 Exploring advanced technologies like **Three.js** for 3D experiences and **D3.js** for data visualization.  
 - 🔹 Open to collaborating on **innovative projects** and **open-source contributions**.  
 - ⚡ Fun Fact: I can debug for hours without realizing it's 4 AM! 🕓  
@@ -22,9 +22,11 @@ Here’s a breakdown of the tech I use and my proficiency:
 ![CSS](https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=white&style=flat)
 ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=black&style=flat)
 ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=black&style=flat)
+![Next.js](https://img.shields.io/badge/-Next.js-000000?logo=next.js&logoColor=white&style=flat)
 ![Node.js](https://img.shields.io/badge/-Node.js-339933?logo=node.js&logoColor=white&style=flat)
 ![MongoDB](https://img.shields.io/badge/-MongoDB-47A248?logo=mongodb&logoColor=white&style=flat)
 ![Express.js](https://img.shields.io/badge/-Express.js-000000?logo=express&logoColor=white&style=flat)
+![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white&style=flat)
 
 ### Tech Stack Proficiency Graph  
 ```mermaid
@@ -34,9 +36,11 @@ title My Tech Stack Proficiency
 "CSS": 85
 "JavaScript": 85
 "React": 75
+"Next.js": 70
 "Node.js": 70
 "MongoDB": 65
 "Express.js": 60
+"Python": 80
 ```
 
 ---
@@ -48,8 +52,82 @@ title My Tech Stack Proficiency
 
 ---
 
-## 🐍 Watch the Snake Game Crawl Through My Contributions  
-![Snake Game](https://github.com/safwan125/safwan125/blob/output/github-contribution-grid-snake.svg)
+## 🐍 Play Snake Game on This Page!  
+<div align="center">
+  <canvas id="snakeCanvas" width="500" height="500" style="border:1px solid black;"></canvas>
+  <script>
+    const canvas = document.getElementById('snakeCanvas');
+    const ctx = canvas.getContext('2d');
+
+    const box = 20;
+    let snake = [{ x: 9 * box, y: 10 * box }];
+    let direction = "RIGHT";
+    let food = {
+      x: Math.floor(Math.random() * 25) * box,
+      y: Math.floor(Math.random() * 25) * box,
+    };
+
+    document.addEventListener('keydown', changeDirection);
+
+    function changeDirection(event) {
+      if (event.keyCode === 37 && direction !== "RIGHT") direction = "LEFT";
+      else if (event.keyCode === 38 && direction !== "DOWN") direction = "UP";
+      else if (event.keyCode === 39 && direction !== "LEFT") direction = "RIGHT";
+      else if (event.keyCode === 40 && direction !== "UP") direction = "DOWN";
+    }
+
+    function collision(head, array) {
+      return array.some(segment => head.x === segment.x && head.y === segment.y);
+    }
+
+    function drawGame() {
+      ctx.fillStyle = "white";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      for (let i = 0; i < snake.length; i++) {
+        ctx.fillStyle = i === 0 ? "green" : "lightgreen";
+        ctx.fillRect(snake[i].x, snake[i].y, box, box);
+      }
+
+      ctx.fillStyle = "red";
+      ctx.fillRect(food.x, food.y, box, box);
+
+      let headX = snake[0].x;
+      let headY = snake[0].y;
+
+      if (direction === "LEFT") headX -= box;
+      if (direction === "UP") headY -= box;
+      if (direction === "RIGHT") headX += box;
+      if (direction === "DOWN") headY += box;
+
+      if (headX === food.x && headY === food.y) {
+        food = {
+          x: Math.floor(Math.random() * 25) * box,
+          y: Math.floor(Math.random() * 25) * box,
+        };
+      } else {
+        snake.pop();
+      }
+
+      const newHead = { x: headX, y: headY };
+
+      if (
+        headX < 0 ||
+        headX >= canvas.width ||
+        headY < 0 ||
+        headY >= canvas.height ||
+        collision(newHead, snake)
+      ) {
+        clearInterval(game);
+        alert("Game Over");
+      }
+
+      snake.unshift(newHead);
+    }
+
+    const game = setInterval(drawGame, 100);
+  </script>
+</div>
 
 ---
 
