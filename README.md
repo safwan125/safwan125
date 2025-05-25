@@ -1,5 +1,3 @@
-![Header](https://drive.google.com/u/0/drive-viewer/AKGpihbRdHMvAwwSogLXbwiMa-kArAM0Qpuw8qre90lmbpSS29M_SuLCNFJEgREgFAf0pl-DioXpUHVd0Z98hw7euMJJTpb49_8XNQ=s1600-rw-v1)
-
 # 👋 Hey there, I'm **Safwan**!  
 
 🎓 I'm a 19-year-old B.Tech CSE student specializing in **Full Stack Web Development**!  
@@ -8,7 +6,7 @@
 ---
 
 ## 🌟 About Me  
-- 🔹 I’m currently diving deep into building web applications with **modern frameworks** like **React**, **Next.js**, and **Node.js**.  
+- 🔹 I’m currently diving deep into building web applications with **modern frameworks** like **React.js**, **Next.js**, and **Node.js**.  
 - 🔹 Exploring advanced technologies like **Three.js** for 3D experiences and **D3.js** for data visualization.  
 - 🔹 Open to collaborating on **innovative projects** and **open-source contributions**.  
 - ⚡ Fun Fact: I can debug for hours without realizing it's 4 AM! 🕓  
@@ -61,7 +59,7 @@ title My Tech Stack Proficiency
 
 ## 🤝 Let’s Connect!  
 I’d love to collaborate or hear about your exciting ideas.  
-- 📩 [Email Me](mailto:safwan.sm125@gmail.com)  
+- 📩 [Email Me](mailto:safwancodes@gmail.com)  
 - 💼 [Connect on LinkedIn](https://linkedin.com/in/safwan125)  
 
 ---
